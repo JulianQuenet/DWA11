@@ -1,4 +1,6 @@
 //@ts-check
+
+
 /**
  * @typedef {Object} State
  * @prop {number} value
@@ -8,6 +10,7 @@ export const State = {
 }
 
 /**
+ * Return the current value of the State
  * @callback getState
  * @returns {State} 
  */

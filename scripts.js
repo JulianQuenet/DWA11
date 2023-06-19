@@ -1,6 +1,8 @@
 import { State,getState } from "./module/state.js"
 import { decrement, increment, dispatch, reset } from "./module/actions.js"
 
+
+
 console.log(getState())
 const number = document.querySelector('[data-number]')
 const subtract = document.querySelector('[data-subtract]') 
@@ -8,7 +10,7 @@ const add = document.querySelector('[data-add]')
 const resetButton = document.querySelector('[data-reset]')
 const overlay = document.querySelector('[data-overlay]')
 
-const subtractHandler = () => {
+const subtractHandler = () => {//Used to decrement the count
   dispatch(decrement())
   number.value = State.value
   if(add.disabled === true) {
@@ -17,7 +19,7 @@ const subtractHandler = () => {
 } 
 
 
-const addHandler = () => {
+const addHandler = () => {//Used to increment the count
   dispatch(increment())
   number.value = State.value
   if(subtract.disabled === true) {
@@ -26,8 +28,8 @@ const addHandler = () => {
 
 } 
 
-  const resetHandler = () => {
-    if(parseInt(number.value) === 0){
+  const resetHandler = () => {//Used to reset the count
+    if(parseInt(number.value) === 0){//If the count is already equal to 0 the action won't be performed
       return
     }
     dispatch(reset())
